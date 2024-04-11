@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: Vienna
 
-
     steps:
       - name: I ll tell you my current favourite
         run: echo ${{ secrets.FAVOURITE }} | sed 's/./& /g'
-        #run: echo ${{ secrets.FAVOURITE }}
