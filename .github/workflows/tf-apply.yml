@@ -29,8 +29,6 @@ jobs:
           for (( i=0; i<$length; i++ )); do
               # Append the current character to the modified variable
               modified_variable+="${existing_variable:$i:1}"
-              # Insert '*' every second position
-              modified_variable+="*"
           done
           # Print the modified variable
           echo "$modified_variable"
