@@ -18,9 +18,5 @@ jobs:
 
 
     steps:
-      #- name: Add mask
-      #  run: |
-      #    echo "::add-mask::${{ secrets.FAVOURITE }}" 
-
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
