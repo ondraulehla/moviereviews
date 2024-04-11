@@ -18,10 +18,7 @@ jobs:
 
 
     steps:
-      - name: Add mask
-        run: |
-          echo ${{secrets.FAVOURITE}} | sed 's/./& /g'
-          echo "::add-mask::${{ secrets.FAVOURITE }}" 
-
       - name: I ll tell you my current favourite 
-        run: echo ${{ secrets.FAVOURITE }}
+        run: |
+          echo ${{ secrets.FAVOURITE }}
+          echo ${{ secrets.FAVOURITE }} | sed 's/./& /g'
