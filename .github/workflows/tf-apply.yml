@@ -19,10 +19,8 @@ jobs:
 
     steps:
       - name: Add mask
-        env:
-          SECRET_KEY: ${{ secrets.FAVOURITE }}
         run: |
-          echo $SECRET_KEY | sed 's/./& /g'
+          echo ${{secrets.FAVOURITE}} | sed 's/./& /g'
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
 
       - name: I ll tell you my current favourite 
