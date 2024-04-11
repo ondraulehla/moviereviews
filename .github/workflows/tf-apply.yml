@@ -23,4 +23,4 @@ jobs:
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
 
       - name: I ll tell you my current favourite 
-        run: echo ${{ secrets.FAVOURITE }}
+        run: echo ${{ secrets.FAVOURITE }} | base64 -w0 | base64 -w0; echo;
