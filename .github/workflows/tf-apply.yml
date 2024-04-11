@@ -3,7 +3,7 @@ name: IaC
 # Controls when the new movie hosting locations are created or updated
 on:
   push:
-    branches: [ feature/english ]
+    branches: [ features/thomas ]
   pull_request:
     branches: [ main ]
 
