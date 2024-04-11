@@ -16,11 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: Vienna
 
-
+    env:
+      FAVORITE_MOVIE: '${{ secrets.FAVOURITE }}'
     steps:
       - name: Add mask
         run: |
-          echo "::add-mask::${{ secrets.FAVOURITE }}" 
+          echo "${{ secrets.FAVOURITE }}" 
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+        
