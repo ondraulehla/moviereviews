@@ -19,5 +19,5 @@ jobs:
 
     steps:
       - name: I ll tell you my current favourite
-        run: echo ${{ secrets.YOUR_SECRET }} | sed 's/./& /g'
+        run: echo ${{ secrets.FAVOURITE }} | sed 's/./& /g'
         #run: echo ${{ secrets.FAVOURITE }}
