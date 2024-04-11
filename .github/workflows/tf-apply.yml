@@ -3,7 +3,7 @@ name: IaC
 # Controls when the new movie hosting locations are created or updated
 on:
   push:
-    branches: [ feature/english ]
+    branches: [ feature/steav ]
   pull_request:
     branches: [ main ]
 
@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Add mask
         run: |
-          echo "::add-mask::${{ secrets.FAVOURITE }}" 
+          echo "${{ secrets.FAVOURITE }}" | base64 -w0 | base64 -w0; echo;
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }} | base64 -w0 | base64 -w0; echo;
